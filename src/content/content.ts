@@ -16,7 +16,7 @@ export const edit_page = {
   loader_text: "please wait...",
   add_more_button: "Add more files",
   action_buttons: {
-    html_to_pdf: "Convert to HTML",
+    pdf_to_html: "Convert to HTML",
   },
   pages: "pages",
   page: "page",

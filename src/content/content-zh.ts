@@ -38,7 +38,7 @@ export const edit_page: _edit_page = {
   loader_text: "请稍候...",
   add_more_button: "添加更多文件",
   action_buttons: {
-    html_to_pdf: "转换为HTML",
+    pdf_to_html: "转换为HTML",
   },
   pages: "页",
   page: "页",
