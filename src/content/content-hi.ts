@@ -70,7 +70,7 @@ export const edit_page: _edit_page = {
   loader_text: "कृपया प्रतीक्षा करें...",
   add_more_button: "अधिक फ़ाइलें जोड़ें",
   action_buttons: {
-    html_to_pdf: "HTML में परिवर्तित करें",
+    pdf_to_html: "HTML में परिवर्तित करें",
   },
   pages: "पृष्ठ",
   page: "पृष्ठ",

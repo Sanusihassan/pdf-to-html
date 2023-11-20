@@ -47,7 +47,7 @@ export const edit_page: _edit_page = {
   loader_text: "يرجى الانتظار...",
   add_more_button: "أضف المزيد من الملفات",
   action_buttons: {
-    html_to_pdf: "تحويل إلى HTML",
+    pdf_to_html: "تحويل إلى HTML",
   },
   pages: "صفحات",
   page: "صفحة",
