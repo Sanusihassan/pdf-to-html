@@ -36,46 +36,45 @@ export const nav_content = {
   pdf_to_markdown: "PDF से मार्कडाउन तक",
 };
 export const tool: _tool = {
-  Merge_PDF: {
-    title: "पीडीएफ विलय",
-    description: "एक दस्तावेज में कई पीडीएफ फ़ाइलों को जोड़ें",
-    color: "var(--red)",
+  PDF_to_HTML: {
+    title: "पीडीएफ से एचटीएमएल में",
+    description: "पीडीएफ फ़ाइलों को एचटीएमएल दस्तावेज़ों में बदलें",
+    color: "rgb(228, 77, 38)",
     type: ".pdf",
-    to: "/merge-pdf",
+    to: "/pdf-to-html",
   },
 };
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "merge-pdf": [
-      "PDF फ़ाइलें मर्ज़ की गई हैं!",
-      "PDF फ़ाइल को मर्ज़ किया गया है!",
+    "pdf-to-html": [
+      "PDF फ़ाइलें HTML में रूपांतरित की गईं!",
+      "PDF फ़ाइल को HTML में रूपांतरित किया गया है!",
     ],
   },
   btnText: {
-    "merge-pdf": [
-      "मर्ज़ की गई PDF फ़ाइलें डाउनलोड करें",
-      "मर्ज़ की गई PDF फ़ाइल डाउनलोड करें",
+    "pdf-to-html": [
+      "HTML में रूपांतरित की गई PDF फ़ाइलें डाउनलोड करें",
+      "HTML में रूपांतरित की गई PDF फ़ाइल डाउनलोड करें",
     ],
   },
   backto: {
-    "merge-pdf": "मर्ज़ की गई PDF को वापस जाएं",
+    "pdf-to-html": "PDF से HTML को वापस जाएं",
   },
 };
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    merge_pdf: "PDF फ्यूज़न विकल्प",
+    pdf_to_html: "PDF से HTML विकल्प",
   },
   loader_text: "कृपया प्रतीक्षा करें...",
   add_more_button: "अधिक फ़ाइलें जोड़ें",
   action_buttons: {
-    merge_pdf: "पीडीएफ विलय करें",
+    html_to_pdf: "HTML में परिवर्तित करें",
   },
-  pages: "पृष्ठों",
+  pages: "पृष्ठ",
   page: "पृष्ठ",
 };
-
 export const tools: _tools = {
   select: "चुनें",
   or_drop: "या फ़ाइलें यहां छोड़ें",

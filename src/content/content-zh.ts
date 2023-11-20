@@ -10,35 +10,35 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Merge_PDF: {
-    title: "合并PDF",
-    description: "将多个PDF文件合并成一个文档",
-    color: "var(--red)",
+  PDF_to_HTML: {
+    title: "PDF 转 HTML",
+    description: "将 PDF 文件转换为 HTML 文档",
+    color: "rgb(228, 77, 38)",
     type: ".pdf",
-    to: "/merge-pdf",
+    to: "/pdf-to-html",
   },
 };
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "merge-pdf": ["PDF文件已合并！", "PDF文件已合并！"],
+    "pdf-to-html": ["PDF文件已转换为HTML！", "PDF文件已转换为HTML！"],
   },
   btnText: {
-    "merge-pdf": ["下载合并后的PDF文件", "下载合并后的PDF文件"],
+    "pdf-to-html": ["下载转换后的HTML文件", "下载转换后的HTML文件"],
   },
   backto: {
-    "merge-pdf": "返回合并PDF",
+    "pdf-to-html": "返回PDF转HTML",
   },
 };
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    merge_pdf: "合并PDF选项",
+    pdf_to_html: "PDF 到 HTML 选项",
   },
-  loader_text: "请稍等...",
+  loader_text: "请稍候...",
   add_more_button: "添加更多文件",
   action_buttons: {
-    merge_pdf: "合并PDF",
+    html_to_pdf: "转换为HTML",
   },
   pages: "页",
   page: "页",

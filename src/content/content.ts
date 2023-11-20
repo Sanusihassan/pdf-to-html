@@ -1,26 +1,27 @@
 export const tool = {
-  Merge_PDF: {
-    title: "Merge PDF",
-    description: "Combine multiple PDF files into one document",
-    color: "var(--red)",
+  PDF_to_HTML: {
+    title: "PDF to HTML",
+    description: "Convert PDF files to HTML documents",
+    color: "rgb(228, 77, 38)",
     type: ".pdf",
-    to: "/merge-pdf",
+    to: "/pdf-to-html",
   },
 };
 
+// this is the updated object that i want, now i want you to translate this object with the same keys but just translate the string values to ar, es, fr, hi and zh respectivly
 export const edit_page = {
   edit_page_titles: {
-    merge_pdf: "Merge PDF options",
+    pdf_to_html: "PDF to HTML options",
   },
   loader_text: "please wait...",
   add_more_button: "Add more files",
-  // translate the values of this object to french.
   action_buttons: {
-    merge_pdf: "Merge PDF",
+    html_to_pdf: "Convert to HTML",
   },
   pages: "pages",
   page: "page",
 };
+
 
 export const tools = {
   select: "Select",
@@ -31,15 +32,21 @@ export const tools = {
 
 export const downloadFile = {
   titles: {
-    "merge-pdf": ["PDF files have been merged!", "PDF file has been merged!"],
+    "pdf-to-html": [
+      "PDF files have been converted to HTML!",
+      "PDF file has been converted to HTML!",
+    ],
   },
 
   btnText: {
-    "merge-pdf": ["Download Merged PDF files", "Download Merged PDF file"],
+    "pdf-to-html": [
+      "Download Converted HTML files",
+      "Download Converted HTML file",
+    ],
   },
 
   backto: {
-    "merge-pdf": "Back To Merge PDF",
+    "pdf-to-html": "Back To PDF to HTML",
   },
 };
 

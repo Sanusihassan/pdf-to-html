@@ -9,12 +9,12 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Merge_PDF: {
-    title: "دمج PDF",
-    description: "دمج ملفات PDF متعددة في مستند واحد",
-    color: "var(--red)",
+  PDF_to_HTML: {
+    title: "PDF إلى HTML",
+    description: "تحويل ملفات PDF إلى مستندات HTML",
+    color: "rgb(228, 77, 38)",
     type: ".pdf",
-    to: "/merge-pdf",
+    to: "/pdf-to-html",
   },
 };
 
@@ -27,27 +27,30 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "merge-pdf": ["تم دمج ملفات ال PDF!", "تم دمج ملف ال PDF!"],
+    "pdf-to-html": [
+      "تم تحويل ملفات PDF إلى HTML!",
+      "تم تحويل ملف PDF إلى HTML!",
+    ],
   },
   btnText: {
-    "merge-pdf": ["تحميل ملفات PDF المدموجة", "تحميل ملف PDF مدموج"],
+    "pdf-to-html": ["تحميل ملفات HTML المحولة", "تحميل ملف HTML المحول"],
   },
   backto: {
-    "merge-pdf": "العودة إلى دمج ملفات PDF",
+    "pdf-to-html": "العودة إلى PDF إلى HTML",
   },
 };
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    merge_pdf: "خيارات دمج ملف PDF",
+    pdf_to_html: "خيارات تحويل PDF إلى HTML",
   },
   loader_text: "يرجى الانتظار...",
-  add_more_button: "إضافة المزيد من الملفات",
+  add_more_button: "أضف المزيد من الملفات",
   action_buttons: {
-    merge_pdf: "دمج PDF",
+    html_to_pdf: "تحويل إلى HTML",
   },
-  pages: "صفحة",
-  page: "صفحة واحدة",
+  pages: "صفحات",
+  page: "صفحة",
 };
 
 export const errors: _errors = {

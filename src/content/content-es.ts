@@ -10,25 +10,25 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Merge_PDF: {
-    title: "Combinar PDF",
-    description: "Combina varios archivos PDF en un solo documento",
-    color: "var(--red)",
+  PDF_to_HTML: {
+    title: "PDF a HTML",
+    description: "Convierte archivos PDF a documentos HTML",
+    color: "rgb(228, 77, 38)",
     type: ".pdf",
-    to: "/merge-pdf",
+    to: "/pdf-to-html",
   },
 };
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    merge_pdf: "Opciones para fusionar PDF",
+    pdf_to_html: "Opciones de PDF a HTML",
   },
   loader_text: "Por favor espera...",
-  add_more_button: "Agrega más archivos",
+  add_more_button: "Agregar más archivos",
   action_buttons: {
-    merge_pdf: "Combinar PDF",
+    html_to_pdf: "Convertir a HTML",
   },
-  pages: "paginas",
+  pages: "páginas",
   page: "página",
 };
 
@@ -41,19 +41,19 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "merge-pdf": [
-      "¡Combinación de archivos PDF exitosa!",
-      "¡Combinación de archivo PDF exitosa!",
+    "pdf-to-html": [
+      "¡Conversión de archivos PDF a HTML exitosa!",
+      "¡Conversión de archivo PDF a HTML exitosa!",
     ],
   },
   btnText: {
-    "merge-pdf": [
-      "Descargar archivos PDF combinados",
-      "Descargar archivo PDF combinado",
+    "pdf-to-html": [
+      "Descargar archivos HTML convertidos",
+      "Descargar archivo HTML convertido",
     ],
   },
   backto: {
-    "merge-pdf": "Volver a unir PDF",
+    "pdf-to-html": "Volver a PDF a HTML",
   },
 };
 

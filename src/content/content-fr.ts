@@ -10,12 +10,12 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Merge_PDF: {
-    title: "Fusionner des PDF",
-    description: "Combinez plusieurs fichiers PDF en un seul document",
-    color: "var(--red)",
+  PDF_to_HTML: {
+    title: "PDF en HTML",
+    description: "Convertir des fichiers PDF en documents HTML",
+    color: "rgb(228, 77, 38)",
     type: ".pdf",
-    to: "/merge-pdf",
+    to: "/pdf-to-html",
   },
 };
 
@@ -28,30 +28,30 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "merge-pdf": [
-      "Fusion de fichiers PDF réussie !",
-      "Fusion de fichier PDF réussie !",
+    "pdf-to-html": [
+      "Conversion de fichiers PDF en HTML réussie !",
+      "Conversion de fichier PDF en HTML réussie !",
     ],
   },
   btnText: {
-    "merge-pdf": [
-      "Télécharger les fichiers PDF fusionnés",
-      "Télécharger le fichier PDF fusionné",
+    "pdf-to-html": [
+      "Télécharger les fichiers HTML convertis",
+      "Télécharger le fichier HTML converti",
     ],
   },
   backto: {
-    "merge-pdf": "Retour à Fusionner PDF",
+    "pdf-to-html": "Retour à PDF vers HTML",
   },
 };
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    merge_pdf: "Options de fusion de PDF",
+    pdf_to_html: "Options de conversion PDF en HTML",
   },
   loader_text: "Veuillez patienter...",
   add_more_button: "Ajouter plus de fichiers",
   action_buttons: {
-    merge_pdf: "Fusionner PDF",
+    html_to_pdf: "Convertir en HTML",
   },
   pages: "pages",
   page: "page",
