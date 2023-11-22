@@ -44,7 +44,7 @@ export const handleUpload = async (
   let url;
   // @ts-ignore
   if (process.env.NODE_ENV === "development") {
-    url = `http://127.0.0.1:5000/${state.path}`;
+    url = `https://5000-planetcreat-pdfequipsap-20rnq604504.ws-eu106.gitpod.io/api/${state.path}`;
     // url = `https://5000-planetcreat-pdfequipsap-te4zoi6qkr3.ws-eu102.gitpod.io/${state.path}`;
   } else {
     url = `/api/${state.path}`;
@@ -62,41 +62,9 @@ export const handleUpload = async (
       outputFileMimeType: "application/zip",
       outputFileName: `PDFEquips-${state.path}.zip`,
     },
-    "application/pdf": {
-      outputFileMimeType: "application/pdf",
-      outputFileName: `${originalFileName}.pdf`,
-    },
-    "application/msword": {
-      outputFileMimeType: "application/msword",
-      outputFileName: `${originalFileName}.docx`,
-    },
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document": {
-      outputFileMimeType:
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-      outputFileName: `${originalFileName}.docx`,
-    },
-    "application/vnd.ms-excel": {
-      outputFileMimeType: "application/vnd.ms-excel",
-      outputFileName: `${originalFileName}.xlsx`,
-    },
-    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": {
-      outputFileMimeType:
-        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      outputFileName: `${originalFileName}.xlsx`,
-    },
-    "application/vnd.ms-powerpoint": {
-      outputFileMimeType: "application/vnd.ms-powerpoint",
-      outputFileName: `${originalFileName}.pptx`,
-    },
-    "application/vnd.openxmlformats-officedocument.presentationml.presentation":
-      {
-        outputFileMimeType:
-          "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-        outputFileName: `${originalFileName}.pptx`,
-      },
-    "text/plain": {
-      outputFileMimeType: "text/plain",
-      outputFileName: `${originalFileName}.txt`,
+    "text/html": {
+      outputFileMimeType: "text/html",
+      outputFileName: `${originalFileName}.html`,
     },
   };
 
@@ -108,7 +76,7 @@ export const handleUpload = async (
     const mimeType = response.data.type || response.headers["content-type"];
     const mimeTypeData = mimeTypeLookupTable[mimeType] || {
       outputFileMimeType: mimeType,
-      outputFileName: "",
+      outputFileName: `${originalFileName}.html`,
     };
     const { outputFileMimeType, outputFileName } = mimeTypeData;
 
