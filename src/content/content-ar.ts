@@ -50,7 +50,7 @@ export const edit_page: _edit_page = {
     pdf_to_html: "تحويل إلى HTML",
   },
   pages: "صفحات",
-  page: "صفحة",
+  page: "صفحة واحدة",
 };
 
 export const errors: _errors = {
