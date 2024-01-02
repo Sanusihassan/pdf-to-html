@@ -70,7 +70,7 @@ const FileCard = ({
             setImageUrl(await getFirstPageAsImage(file, dispatch, errors));
           }
         } else if (extension && extension !== ".jpg") {
-          console.log(fileDetailProps);
+          
           if (isSubscribed) {
             setImageUrl(
               !file.size
