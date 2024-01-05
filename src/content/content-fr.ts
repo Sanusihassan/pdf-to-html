@@ -11,7 +11,9 @@ import type {
 
 export const tool: _tool = {
   PDF_to_HTML: {
-    title: "PDF en HTML",
+    title: "PDF vers HTML",
+    seoTitle:
+      "Convertir PDF en HTML en ligne - Convertisseur PDF en HTML | PDFEquips",
     description: "Convertir des fichiers PDF en documents HTML",
     color: "rgb(228, 77, 38)",
     type: ".pdf",

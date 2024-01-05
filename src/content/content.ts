@@ -1,6 +1,7 @@
 export const tool = {
   PDF_to_HTML: {
     title: "PDF to HTML",
+    seoTitle: "Convert PDF to HTML Online - PDF to HTML Converter | PDFEquips",
     description: "Convert PDF files to HTML documents",
     color: "rgb(228, 77, 38)",
     type: ".pdf",
@@ -21,7 +22,6 @@ export const edit_page = {
   pages: "pages",
   page: "page",
 };
-
 
 export const tools = {
   select: "Select",

@@ -12,6 +12,7 @@ import type {
 export const tool: _tool = {
   PDF_to_HTML: {
     title: "PDF 转 HTML",
+    seoTitle: "在线将 PDF 转换为 HTML - PDF 转 HTML 转换器 | PDFEquips",
     description: "将 PDF 文件转换为 HTML 文档",
     color: "rgb(228, 77, 38)",
     type: ".pdf",
