@@ -144,10 +144,19 @@
     }
 
     .grid-footer {
-      grid-area: footer;
-      grid-column: 1 / -1;
 
       @include extend("d-flex justify-content-center align-items-center");
+    }
+
+    & + .show-onsmall {
+      @include extend("d-none");
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      @media (max-width: 600px) {
+        display: block !important;
+      }
     }
 
     transition: 0.3s;
@@ -155,7 +164,9 @@
     @media (max-width: 600px) {
       position: absolute;
       width: 100%;
-
+      .hide-onsmall {
+        display: none;
+      }
       [dir="rtl"] &,
       [lang="ar"] & {
         right: calc(-100% - 3.25rem);

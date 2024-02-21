@@ -2,13 +2,12 @@ import React, { useEffect, useRef } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 // store
-import { ToolState, setClick, setFocus } from "../../src/store";
+import { ToolState } from "../../src/store";
 import { handleUpload } from "../../src/handlers/handleUpload";
 import { handleChange } from "../../src/handlers/handleChange";
 import { useFileStore } from "../../src/file-store";
 // types
 import type { tools } from "../../content";
-import { validateFiles } from "../../src/utils";
 import { ToolData } from "../Tool";
 type AcceptedFileTypes = {
   [key in ".pdf" | ".pptx" | ".docx" | ".xlsx" | ".jpg" | ".html"]: string;
@@ -28,17 +27,7 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
   lang,
   tools,
 }) => {
-  let t: NodeJS.Timer;
-  // redux state
-  const statePath = useSelector(
-    (state: { tool: ToolState }) => state.tool.path
-  );
-  const stateFocus = useSelector(
-    (state: { tool: ToolState }) => state.tool.focus
-  );
-  const stateClick = useSelector(
-    (state: { tool: ToolState }) => state.tool.click
-  );
+  let path = data.to.replace("/", "");
   const errorMessage = useSelector(
     (state: { tool: ToolState }) => state.tool.errorMessage
   );
@@ -61,19 +50,6 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
     setFileInput(fileInput);
     setSubmitBtn(submitBtn);
     setDownloadBtn(downloadBtn);
-    window.addEventListener("focus", () => {
-      dispatch(setFocus(true));
-      dispatch(setClick(false));
-      // if (state.click !== state.focus && (!files.length || files.length == 1)) {
-      // t = setInterval(() => {
-      validateFiles(files, data.type, errors, dispatch, {
-        path: statePath,
-        focus: stateFocus,
-        click: stateClick,
-      });
-      // }, 3000);
-      // }
-    });
   }, []);
   return (
     <form
@@ -86,7 +62,7 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
           downloadBtn,
           dispatch,
           {
-            path: statePath,
+            path: path,
             errorMessage,
           },
           files,
@@ -102,7 +78,6 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
         className={`upload-btn btn btn-lg text-white position-relative overflow-hidden ${data.to.replace("/", "")}`}
         onClick={(e) => {
           e.stopPropagation();
-          dispatch(setClick(true));
         }}
         role="button"
       >
@@ -126,7 +101,7 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
           accept={
             acceptedFileTypes[data.type as keyof typeof acceptedFileTypes]
           }
-          multiple={statePath !== "split-pdf" && statePath !== "pdf-to-pdf-a"}
+          multiple={path !== "split-pdf" && path !== "pdf-to-pdf-a"}
           ref={fileInput}
           className="position-absolute file-input"
           onClick={(e) => {
@@ -134,9 +109,7 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
           }}
           onChange={(e) => {
             handleChange(e, dispatch, setFiles, data.type, errors, files, {
-              path: statePath,
-              focus: stateFocus,
-              click: stateClick,
+              path,
             });
           }}
         />
