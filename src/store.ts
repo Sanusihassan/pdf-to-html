@@ -38,7 +38,6 @@ const toolSlice = createSlice({
       state.isSubmitted = false;
     },
     setField(state, action: PayloadAction<Partial<ToolState>>) {
-      // Loop over all the keys in the action payload
       Object.keys(action.payload).forEach((key) => {
         // Cast the key to keyof ToolState to ensure it's a valid key
         const typedKey = key as k;
