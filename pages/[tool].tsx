@@ -11,6 +11,7 @@ import {
 import { useRouter } from "next/router";
 import type { tool as _tool } from "../content";
 import { PDFToHTMLHOWTO } from "@/src/how-to";
+import { OpenGraph } from "pdfequips-open-graph/OpenGraph";
 
 export async function getStaticPaths() {
   const paths = Object.keys(routes).map((key) => ({
@@ -59,11 +60,16 @@ export default ({ item }: { item: _tool["PDF_to_HTML"] }) => {
           }}
         />
         <meta name="description" content={item.description} />
-        <link rel="icon" href="/logo.png" />
-        {/* needed for styles */}
-        <link
-          rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        <link rel="icon" type="image/svg+xml" href="/images/icons/logo.svg" />
+        <OpenGraph
+          ogUrl={`https://www.pdfequips.com${item.to}`}
+          ogDescription={item.description}
+          ogImageWidth="1200"
+          ogImageHeight="630"
+          ogLocale="en"
+          ogSiteName="PDFEquips"
+          ogTitle={item.seoTitle}
+          ogImage={`https://www.pdfequips.com/images${item.to}.png`}
         />
       </Head>
       <NavBar path="pdf-to-html" lang="" />
