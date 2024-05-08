@@ -17,6 +17,21 @@ export const tool: _tool = {
     color: "rgb(228, 77, 38)",
     type: ".pdf",
     to: "/pdf-to-html",
+    features: [
+      {
+        title: "即时转换，无需注册。",
+        description: "无需注册或提供任何信息即可将您的PDF转换为HTML。我们的转换器对所有人都是免费的，而且速度非常快。"
+      },
+      {
+        title: "安全的文档管理。",
+        description: "您的下载和生成的文件都经过TLS加密处理，立即删除以提高安全性。查看我们的隐私政策以获取更多信息。"
+      },
+      {
+        title: "基于云的处理。",
+        description: "我们在线服务的主要优势之一是所有的PDF到HTML转换都是在云端进行的。这意味着它不会减慢您的计算机，您可以随时随地使用我们的服务。"
+      }
+    ]
+
   },
 };
 
@@ -51,6 +66,15 @@ export const tools: _tools = {
   files: "文件",
   drop_files: "在此处拖放文件",
 };
+
+export const footer: _footer = {
+  brand: "PDFEquips",
+  terms: "条款",
+  conditions: "条件",
+  privacy_policy: "隐私政策",
+  title: "免费在线PDF工具"
+};
+
 
 export const errors: _errors = {
   EMPTY_FILE: {

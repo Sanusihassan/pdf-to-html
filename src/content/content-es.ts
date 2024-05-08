@@ -18,6 +18,21 @@ export const tool: _tool = {
     color: "rgb(228, 77, 38)",
     type: ".pdf",
     to: "/pdf-to-html",
+    features: [
+      {
+        title: "Conversión instantánea, no se requiere registro.",
+        description: "No es necesario registrarse o proporcionarnos información alguna para cambiar su PDF a HTML. Nuestro convertidor es gratuito para todos y muy rápido."
+      },
+      {
+        title: "Gestión segura de documentos.",
+        description: "Sus descargas y archivos generados se procesan con cifrado TLS y se eliminan inmediatamente para una mayor seguridad. Consulte nuestra política de privacidad para obtener más información."
+      },
+      {
+        title: "Procesamiento basado en la nube.",
+        description: "Una de las principales ventajas de nuestro servicio en línea es que todas las conversiones de PDF a HTML se realizan en la nube. Esto significa que no ralentizará su computadora, y puede utilizar nuestro servicio desde cualquier lugar y en cualquier momento."
+      }
+    ]
+
   },
 };
 
@@ -58,6 +73,15 @@ export const downloadFile: _downloadFile = {
     "pdf-to-html": "Volver a PDF a HTML",
   },
 };
+
+export const footer: _footer = {
+  brand: "PDFEquips",
+  terms: "términos",
+  conditions: "condiciones",
+  privacy_policy: "política de privacidad",
+  title: "Herramientas PDF en línea gratuitas"
+};
+
 
 export const errors: _errors = {
   EMPTY_FILE: {

@@ -7,11 +7,15 @@ import {
   tool,
   tools,
   downloadFile,
+  footer
 } from "../src/content/content";
 import { useRouter } from "next/router";
 import type { tool as _tool } from "../content";
 import { PDFToHTMLHOWTO } from "@/src/how-to";
 import { OpenGraph } from "pdfequips-open-graph/OpenGraph";
+import HowTo from "@/components/HowTo";
+import { Footer } from "@/components/Footer";
+import { Features } from "@/components/Features";
 
 export async function getStaticPaths() {
   const paths = Object.keys(routes).map((key) => ({
@@ -83,6 +87,13 @@ export default ({ item }: { item: _tool["PDF_to_HTML"] }) => {
         page={edit_page.page}
         downloadFile={downloadFile}
       />
+      <div className="container">
+        <Features features={item.features} />
+      </div>
+      <div className="container">
+        <HowTo howTo={PDFToHTMLHOWTO} alt={item.seoTitle} />
+      </div>
+      <Footer footer={footer} />
     </>
   );
 };

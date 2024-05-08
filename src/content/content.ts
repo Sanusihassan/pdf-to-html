@@ -1,4 +1,15 @@
-export const tool = {
+type tool_type = {
+  PDF_to_HTML: {
+    title: string;
+    seoTitle: string;
+    description: string;
+    color: string;
+    type: string;
+    to: string;
+    features: { title: string; description: string }[]
+  }
+}
+export const tool: tool_type = {
   PDF_to_HTML: {
     title: "PDF to HTML",
     seoTitle: "Convert PDF to HTML Online - PDF to HTML Converter | PDFEquips",
@@ -6,6 +17,20 @@ export const tool = {
     color: "rgb(228, 77, 38)",
     type: ".pdf",
     to: "/pdf-to-html",
+    features: [
+      {
+        title: "Convert instantly, no sign-up required.",
+        description: "No need to register or give us any information to change your PDF to HTML. Our converter is free for everyone and super fast"
+      },
+      {
+        title: "Secure document management.",
+        description: "Your downloads and generated files are processed with TLS encryption and are immediately deleted for added security Check our privacy policy for more information"
+      },
+      {
+        title: "Cloud-based processing.",
+        description: "One of the main advantages of our online service is that all PDF to HTML conversions are done in the cloud This means it won't slow down your computer, and you can use our service from anywhere and at any time"
+      }
+    ]
   },
 };
 
@@ -48,6 +73,14 @@ export const downloadFile = {
   backto: {
     "pdf-to-html": "Back To PDF to HTML",
   },
+};
+
+export const footer = {
+  brand: "PDFEquips",
+  terms: "terms",
+  conditions: "conditions",
+  privacy_policy: "privacy policy",
+  title: "Free Online PDF Tools"
 };
 
 export const errors = {

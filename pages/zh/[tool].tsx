@@ -6,12 +6,16 @@ import {
   tool,
   tools,
   downloadFile,
+  footer
 } from "../../src/content/content-zh";
 import { errors } from "../../src/content/content-zh";
 import { useRouter } from "next/router";
 import type { tool as _tool } from "../../content";
 import { PDFToHTMLHOWTO_zh } from "@/src/how-to";
 import { OpenGraph } from "pdfequips-open-graph/OpenGraph";
+import { Features } from "@/components/Features";
+import { Footer } from "@/components/Footer";
+import HowTo from "@/components/HowTo";
 
 export async function getStaticPaths() {
   const paths = Object.keys(routes).map((key) => ({
@@ -88,7 +92,13 @@ export default ({
         pages={edit_page.pages}
         page={edit_page.page}
         downloadFile={downloadFile}
-      />
+      /><div className="container">
+        <Features features={item.features} />
+      </div>
+      <div className="container">
+        <HowTo howTo={PDFToHTMLHOWTO_zh} alt={item.seoTitle} />
+      </div>
+      <Footer footer={footer} />
     </>
   );
 };

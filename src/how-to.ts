@@ -39,6 +39,7 @@ export const PDFToHTMLHOWTO = {
   ],
 };
 
+export type PDFToHTMLHOWTOType = typeof PDFToHTMLHOWTO;
 export const PDFToHTMLHOWTO_ar = {
   "@context": "http://schema.org",
   "@type": "HowTo",
