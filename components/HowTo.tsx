@@ -20,7 +20,7 @@ const HowTo = ({ howTo, alt }: { howTo: PDFToHTMLHOWTOType, alt: string; }) => {
                         <source srcSet="/images/pdf-to-html-ad-xs.png" media="(max-width: 575px)" />
                         <source srcSet="/images/pdf-to-html-ad-md.png" media="(min-width: 576px) and (max-width: 1199px)" />
                         <source srcSet="/images/pdf-to-html-ad-xl.png" media="(min-width: 1200px)" />
-                        <img src="/images/pdf-to-html-ad.png" className="img-fluid" alt={alt} title={alt} />
+                        <img src="/pdfequips.png" className="img-fluid" alt={alt} title={alt} />
                     </picture>
 
                 </div>
