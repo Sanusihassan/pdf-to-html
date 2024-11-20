@@ -15,7 +15,9 @@ import { PDFToHTMLHOWTO_ar } from "@/src/how-to";
 import { OpenGraph } from "pdfequips-open-graph/OpenGraph";
 import { Features } from "@/components/Features";
 import HowTo from "@/components/HowTo";
-import { Footer } from "@/components/Footer";
+import { Footer } from "pdfequips-footer/components/Footer";
+import { fetchSubscriptionStatus } from "fetch-subscription-status";
+import { useState, useCallback, useEffect } from "react";
 
 export async function getStaticPaths() {
   const paths = Object.keys(routes).map((key) => ({
@@ -34,16 +36,11 @@ export async function getStaticProps({
   };
 }) {
   const item = routes[`/${params.tool}` as keyof typeof routes].item;
-  return { props: { item } };
+  const initialPremiumStatus = await fetchSubscriptionStatus();
+  return { props: { item, initialPremiumStatus } };
 }
 
-export default ({
-  item,
-  lang,
-}: {
-  item: _tool["PDF_to_HTML"];
-  lang: string;
-}) => {
+export default ({ item, lang, initialPremiumStatus }: { item: _tool["PDF_to_HTML"]; lang: string; initialPremiumStatus: boolean }) => {
   const router = useRouter();
   const { asPath } = router;
   const websiteSchema = {
@@ -53,6 +50,24 @@ export default ({
     description: item.description,
     url: `https://www.pdfequips.com${asPath}`,
   };
+  const [isPremium, setIsPremium] = useState(initialPremiumStatus);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const checkStatus = useCallback(async () => {
+    try {
+      const status = await fetchSubscriptionStatus(); // Function to fetch subscription status
+      setIsPremium(status);
+      setIsLoaded(true);
+    } catch (err) {
+      console.error("Error checking subscription status:", err);
+      setIsLoaded(true);
+
+    }
+  }, []);
+
+
+  useEffect(() => {
+    checkStatus();
+  }, []);
   return (
     <>
       <Head>
@@ -71,6 +86,13 @@ export default ({
         />
         <meta name="description" content={item.description} />
         <link rel="icon" type="image/svg+xml" href="/images/icons/logo.svg" />
+        {isLoaded && !isPremium ?
+          <>
+            <meta name="google-adsense-account" content="ca-pub-7391414384206267" />
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7391414384206267"
+              cross-origin="anonymous"></script>
+          </>
+          : null}
         <OpenGraph
           ogUrl={`https://www.pdfequips.com/ar${item.to}`}
           ogDescription={item.description}
@@ -97,7 +119,7 @@ export default ({
       <div className="container">
         <HowTo howTo={PDFToHTMLHOWTO_ar} alt={item.seoTitle} />
       </div>
-      <Footer footer={footer} />
+      <Footer title={item.seoTitle.split("-")[1]} lang={lang} />
     </>
   );
 };
